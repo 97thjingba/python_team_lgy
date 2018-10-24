@@ -4,7 +4,7 @@ App介绍，下载。使用二维码扫码后下载
 ## 开始开发
 
 ### 启动 docker
-
+{language:python}
 ```
 $ cd docker
 $ docker-compose up -d
@@ -94,7 +94,7 @@ GET {{shafayouxi}}/v1/download/{{name}}-{{version}}.{{ext}}
 |---    |---|
 |name   |app名称|
 |version|app版本|
-|ext    |apk或ipa| 
+|ext|apk或ipa| 
 
 注：ipa文件只可以通过苹果设备进行下载，apk文件除苹果设备均可下载（通过浏览器User-Agent进行判断）
 
