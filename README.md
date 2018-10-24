@@ -90,8 +90,8 @@ python qrcode.py -p ~/Download/doudizhu.apk -l 增加头像修改功能
 
 GET {{shafayouxi}}/v1/download/{{name}}-{{version}}.{{ext}}
 
-|Key    |Value |
-|---    |---   |
+|Key    |Value|
+|---    |---|
 |name   |app名称|
 |version|app版本|
 |ext    |apk或ipa| 
