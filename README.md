@@ -4,7 +4,7 @@ App介绍，下载。使用二维码扫码后下载
 ## 开始开发
 
 ### 启动 docker
-{language:python}
+
 ```
 $ cd docker
 $ docker-compose up -d
