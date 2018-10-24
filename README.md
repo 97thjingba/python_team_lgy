@@ -90,11 +90,11 @@ python qrcode.py -p ~/Download/doudizhu.apk -l 增加头像修改功能
 
 GET {{shafayouxi}}/v1/download/{{name}}-{{version}}.{{ext}}
 
-|Key    |Value    |
-|---    |---      |
-|name   |app名称   |
-|version|app版本   |
-|ext    |apk或ipa | 
+|Key    |Value |
+|---    |---   |
+|name   |app名称|
+|version|app版本|
+|ext    |apk或ipa| 
 
 注：ipa文件只可以通过苹果设备进行下载，apk文件除苹果设备均可下载（通过浏览器User-Agent进行判断）
 
