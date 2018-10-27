@@ -1,37 +1,102 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,imitial-scale=1">
+		<!--
+		meta viewport 将可视化界面用content属性来布局，显示不同设备的分辨率
+		content属性：
+		width：界面可显示宽度，如 device-width 是装置的相应宽度
+		height： 页面可显示高度
+		intial-scale:页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放
+     	maximum-scale=1.0, minimum-scale=1.0;可视区域的缩放级别，
+     	maximum-scale用户可将页面放大的程序，1.0将禁止用户放大到实际尺寸之上。
+     	user-scalable:是否可对页面进行缩放，no 禁止缩放-->
 		<title>laiwan.io</title>
-		<link href="css/use.css" rel=”stylesheet” type=”text/css” />
+		<link rel="stylesheet" href="css/bulma.min.css"/>
+		<!--引入外部样式表bluma-->
 	</head>
 	<body>
-		<img src = "img/icon_back@3x.png" style = "size: 34px;\
-		color: #3e38b6;margin-top: 27px;margin-bottom: 27px;"/>
-		<h1 style = "text-align: center;margin-top:-71px;\
-		font-size:34px;color: #3e38b6;">弹窗解决方案</h1>
+		<section class="section">
+			<div class="container">
+				<div class="column">
+					<img src="img/icon_back@3x.png"/>
+					<h1 class="title" style="margin-top:-45px;text-align:center;font-size: 34px;color: #3e38bd;">
+						弹窗解决方案
+					</h1>
+				</div>
+			</div>
+		</section>
 		<hr />
-		<h2 style = "font-size: 60px;color: #3e38bd;\
-		margin-top: 50px;margin-bottom: 46px;margin-left: 240px;">步骤1</h2>
-		<img src = "img/img_step_1@3x.png" style = "margin-left: 360px;"/>
-		<h2 style = "font-size: 60px;color: #3e38bd;\
-		margin-top: 50px;margin-bottom: 46px;margin-left: 240px;">步骤2</h2>
-		<img src = "img/img_step_2@3x.png" style = "margin-left: 360px;"/>
-		<h2 style = "font-size: 60px;color: #3e38bd;\
-		margin-top: 50px;margin-bottom: 46px;margin-left: 240px;">步骤3</h2>
-		<img src = "img/img_step_3@3x.png" style = "margin-left: 360px;"/>
-		<h2 style = "font-size: 60px;color: #3e38bd;\
-		margin-top: 50px;margin-bottom: 46px;margin-left: 240px;">步骤4</h2>
-		<img src = "img/img_step_4@3x.png" style = "margin-left: 360px;"/>
-		<h2 style = "font-size: 60px;color: #3e38bd;\
-		margin-top: 50px;margin-bottom: 46px;margin-left: 240px;">步骤5</h2>
-		<img src = "img/img_step_5@3x.png" style = "margin-left: 360px;"/>
-		<h2 style = "font-size: 60px;color: #3e38bd;\
-		margin-top: 50px;margin-bottom: 46px;margin-left: 240px;">步骤6</h2>
-		<img src = "img/img_step_6@3x.png" style = "margin-left: 360px;"/>
-		<h2 style = "font-size: 60px;color: #3e38bd;\
-		margin-top: 50px;margin-bottom: 46px;margin-left: 240px;">步骤7</h2>
-		<img src = "img/img_step_7@3x.png" style = "margin-left: 360px;"/>
+		<section class="section">
+			<div class="container">
+				<div class="column">
+					<h2 class="title is-2" style = "font-size: 60px;color: #3e38bd;margin-top: 50px;margin-bottom: 46px;">
+						步骤1
+					</h2>
+					<img src="img/img_step_1@3x.png"/>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="column">
+					<h2 class="title is-2" style = "font-size: 60px;color: #3e38bd;margin-top: 50px;margin-bottom: 46px;">
+						步骤2
+					</h2>
+					<img src="img/img_step_2@3x.png"/>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="column">
+					<h2 class="title is-2" style = "font-size: 60px;color: #3e38bd;margin-top: 50px;margin-bottom: 46px;">
+						步骤3
+					</h2>
+					<img src="img/img_step_3@3x.png"/>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="column">
+					<h2 class="title is-2" style = "font-size: 60px;color: #3e38bd;margin-top: 50px;margin-bottom: 46px;">
+						步骤4
+					</h2>
+					<img src="img/img_step_4@3x.png"/>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="column">
+					<h2 class="title is-2" style = "font-size: 60px;color: #3e38bd;margin-top: 50px;margin-bottom: 46px;">
+						步骤5
+					</h2>
+					<img src="img/img_step_5@3x.png"/>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="column">
+					<h2 class="title is-2" style = "font-size: 60px;color: #3e38bd;margin-top: 50px;margin-bottom: 46px;">
+						步骤6
+					</h2>
+					<img src="img/img_step_6@3x.png"/>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="column">
+					<h2 class="title is-2" style = "font-size: 60px;color: #3e38bd;margin-top: 50px;margin-bottom: 46px;">
+						步骤7
+					</h2>
+					<img src="img/img_step_7@3x.png"/>
+				</div>
+			</div>
+		</section>
 	</body>
 </html>
