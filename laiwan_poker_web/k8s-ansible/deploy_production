@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "=== github上的最后5个tag (按版本号排序) ==="
+git ls-remote --tags| awk '{print $2}' | sort --version-sort | tail -n 5
+echo ""
+
+echo "=== 本地git的最后5个tag (按时间排序) ==="
+git --no-pager log --tags --simplify-by-decoration --pretty="format:%ai %d" | head -n 5 | tail -r
+echo ""
+
+echo "** 注意本地的版本可能还没有打包 **"
+
+read -p "请问需要部署那个tag版本: v" docker_tag
+
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i production.hosts production.yml \
+    --extra-vars "docker_tag=$docker_tag"

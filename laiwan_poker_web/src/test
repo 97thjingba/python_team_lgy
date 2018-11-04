@@ -1,0 +1,6 @@
+#!/bin/bash
+while true
+do
+    python manage.py test --config=configs.docker_compose
+    sleep 30
+done

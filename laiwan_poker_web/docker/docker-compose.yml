@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+
+  backend:
+    restart: always
+    build: ../
+    ports:
+      - 8000:8000
+    volumes:
+      - ../src:/opt/app
+    command: sleep 999999999
+
+  cassandra:
+    image: cassandra:3.11

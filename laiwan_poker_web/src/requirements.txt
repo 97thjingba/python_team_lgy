@@ -1,0 +1,21 @@
+# server
+sanic==0.8.3
+
+# unit test
+pytest==3.2.1
+pytest-sanic==0.1.8
+pytest-cov==2.5.1
+
+# database
+aiocassandra==1.0.3
+cassandra-driver==3.12.0
+
+# tools
+marshmallow==2.15.5
+raven==6.3.0
+raven-aiohttp==0.7.0
+click==6.7
+
+# 开发工具
+ipython
+yapf
