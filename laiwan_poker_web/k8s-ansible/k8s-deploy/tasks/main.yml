@@ -1,0 +1,30 @@
+---
+- name: Make k8s dir
+  remote_user: root
+  become: yes
+  file: path=k8s mode=0755 state=directory
+
+- name: copy k8s deploy files to server
+  synchronize:
+    src: k8s/
+    dest: k8s/{{ project }}
+    rsync_opts: --exclude=.DS_Store
+    delete: yes
+
+- name: upload install.sh
+  template:
+    src: install.sh.tpl
+    dest: k8s/{{ project }}/install.sh
+    mode: '0755'
+
+- name: upload deployment.yaml
+  template:
+    src: deployment.yaml.tpl
+    dest: k8s/{{ project }}/deployment.yaml
+
+- name: Run install.sh
+  shell: ./install.sh
+  args:
+    chdir: k8s/{{ project }}
+  register: install
+- debug: var=install.stdout_lines

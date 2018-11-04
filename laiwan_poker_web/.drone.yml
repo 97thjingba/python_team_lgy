@@ -1,0 +1,55 @@
+pipeline:
+
+  code_inspection:
+    image: python:3.6
+    commands:
+      - pip3 install -q pylama yapf
+      - pylama --skip '*/tests/*,*/configs/*,*/aiocqlengine/models.py'
+      - yapf -dr . | (! grep '.')
+    when:
+      event: push
+
+  docker_app_image:
+    image: plugins/docker
+    registry: registry.shafayouxi.org
+    secrets: [ docker_username, docker_password ]
+    repo: registry.shafayouxi.org/kevinanew/sanic_template
+    tags: latest
+    dockerfile: Dockerfile
+    build_args:
+      - "--no-cache"
+    when:
+      event: push
+
+  build_docker_image_with_tag:
+    image: plugins/docker
+    registry: registry.shafayouxi.org
+    secrets: [ docker_username, docker_password ]
+    repo: registry.shafayouxi.org/kevinanew/sanic_template
+    dockerfile: Dockerfile
+    tags: ${DRONE_TAG##v}
+    build_args:
+      - "--no-cache"
+    when:
+      event: tag
+
+  cassandra:
+    image: cassandra:3.11
+    detach: true
+    when:
+      event: push
+
+  unittest:
+    image: registry.shafayouxi.org/kevinanew/sanic_template:latest
+    pull: true
+    commands:
+      - python src/manage.py test --config=configs.drone_test
+    when:
+      event: push
+
+  telegram:
+    image: appleboy/drone-telegram
+    token: 483423532:AAFwMDyTAJF1Mbzmm7PA-2LSK4w-9bwFh3I
+    to: -1001188725759
+    when:
+      status: [ failure ]

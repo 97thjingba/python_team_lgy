@@ -1,0 +1,11 @@
+---
+- hosts: all
+  remote_user: root
+  become: yes
+  roles:
+    - {role: k8s-deploy,
+      project: <project_name>,
+      project_dns_name: <project-dns-name>,
+      k8s_namespace: <production or staging>,
+      stage: production,
+      }
