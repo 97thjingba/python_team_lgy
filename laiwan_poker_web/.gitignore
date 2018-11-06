@@ -103,3 +103,9 @@ ENV/
 .idea/
 
 *,cover
+
+*.retry
+.DS_Store
+
+# idea
+.idea/
