@@ -16,11 +16,17 @@ api_blueprint.add_route(
 ###############################
 # Admin 接口
 ###############################
-admin_blueprint = Blueprint('admin')
+admin_blueprint = Blueprint('admin', url_prefix='admin')
+
+# 下载主页
+admin_blueprint.add_route(views.HomePageView.as_view(), '/', methods=['GET'])
 
 admin_blueprint.add_route(
-    admin.ListExampleView.as_view(), '/admin/example', methods=['GET'])
+    admin.ListExampleView.as_view(), '/example', methods=['GET'])
 
+admin_blueprint.static('/static/js', '/opt/app/static/js')
+admin_blueprint.static('/static/img', '/opt/app/static/img')
+admin_blueprint.static('/static/css', '/opt/app/static/css')
 ###############################
 # k8s 检查
 ###############################
